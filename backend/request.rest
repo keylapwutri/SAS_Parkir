@@ -1,0 +1,21 @@
+GET http://localhost:5000/pengguna
+###
+GET http://localhost:5000/tarif
+###
+GET http://localhost:5000/kendaraan
+###
+GET http://localhost:5000/area
+###
+GET http://localhost:5000/transaksi
+
+###
+POST http://localhost:5000/pengguna
+Content-Type: application/json
+
+{
+    "nama_lengkap": "Keyla Azhari Permata Putri",
+    "nama_pengguna": "admin_p",
+    "password": "admin123",
+    "role": "admin",
+    "status_aktif": false
+}
