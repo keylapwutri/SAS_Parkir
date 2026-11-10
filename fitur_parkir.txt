@@ -36,7 +36,7 @@ Tabel:
 - status_aktif
 
 2. tb_tarif
-- id_tarif (PK, varchar) (cth.: tp_mb, tp_mt, tp_ln)
+- id_tarif (PK, int)
 - jenis_kendaraan (enum: Mobil, Motor, Lainnya)
 - biaya_tarif
 
