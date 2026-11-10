@@ -1,10 +1,27 @@
 import Transaksi from "../models/transaksi_model.js";
 import Tarif from "../models/tarif_model.js";
+import Kendaraan from "../models/kendaraan_model.js";
+import Area from "../models/area_model.js";
 import { hitung_tarif } from "../services/tarif_service.js";
 
 export const get_semua_transaksi = async(req, res) =>{
     try {
-        const response = await Transaksi.findAll();
+        const response = await Transaksi.findAll({
+            include: [
+                {
+                    model: Kendaraan,
+                    as: "kendaraan"
+                },
+                {
+                    model: Area,
+                    as: "area"
+                },
+                {
+                    model: Tarif,
+                    as: "tarif"
+                }
+            ]
+        });
         res.status(200).json(response);
     } catch (error) {
         console.log(error.message);

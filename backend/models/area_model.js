@@ -16,8 +16,7 @@ const Area = database.define('tb_area', {
     },
     kapasitas : {
         type : DataTypes.INTEGER,
-        allowNull : false,
-        unique : true
+        allowNull : false
     },
     terisi : {
         type : DataTypes.INTEGER,

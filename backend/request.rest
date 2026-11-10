@@ -14,8 +14,38 @@ Content-Type: application/json
 
 {
     "nama_lengkap": "Keyla Azhari Permata Putri",
-    "nama_pengguna": "admin_p",
+    "nama_pengguna": "admin2",
     "password": "admin123",
     "role": "admin",
     "status_aktif": false
+}
+
+###
+POST http://localhost:5000/tarif
+Content-Type: application/json
+
+{
+    "jenis_kendaraan": "lainnya",
+    "biaya_tarif": 7000.00,
+    "tarif_maksimal": 30000.00
+}
+
+###
+POST http://localhost:5000/area
+Content-Type: application/json
+
+{
+    "nama_area": "A1",
+    "kapasitas": 10,
+    "terisi": 0,
+    "status": true
+}
+
+###
+POST http://localhost:5000/kendaraan
+Content-Type: application/json
+
+{
+    "nomor_polisi": "B3818EUF",
+    "jenis_kendaraan": "motor"
 }

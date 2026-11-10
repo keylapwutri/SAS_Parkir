@@ -4,7 +4,7 @@ import database from "../config/database.js";
 
 const {DataTypes} = Sequelize;
 
-const Log_aktivitas = database.define('tb_log-aktivitas', {
+const Log_aktivitas = database.define('tb_log_aktivitas', {
     id_log : {
         type : DataTypes.INTEGER,
         autoIncrement : true,

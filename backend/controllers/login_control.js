@@ -1,13 +1,12 @@
 import Pengguna from "../models/pengguna_model.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { where } from "sequelize";
 
 export const login = async(req, res) =>{
     const { nama_pengguna, password } = req.body;
 
     try {
-        const pengguna = await pengguna.findOne({
+        const pengguna = await Pengguna.findOne({
             where: { nama_pengguna }
         })
 
@@ -28,7 +27,7 @@ export const login = async(req, res) =>{
                 nama_lengkap: pengguna.nama_lengkap,
                 nama_pengguna: pengguna.nama_pengguna,
                 role: pengguna.role,
-                status_aktif: pengguna.status_aktif
+                status_aktif: true
             },
             "TOKEN_KUNCI",
             { expiresIn: "1d" }

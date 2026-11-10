@@ -6,9 +6,9 @@ const {DataTypes} = Sequelize;
 
 const Tarif = database.define('tb_tarif', {
     id_tarif : {
-        type : DataTypes.STRING,
-        unique : true,
-        primaryKey : true
+        type : DataTypes.INTEGER,
+        primaryKey : true,
+        autoIncrement : true
     },
     jenis_kendaraan : {
         type : DataTypes.ENUM('mobil', 'motor', 'lainnya'),

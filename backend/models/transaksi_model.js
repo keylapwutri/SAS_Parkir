@@ -28,7 +28,7 @@ const Transaksi = database.define('tb_transaksi', {
         allowNull: true
     },
     id_tarif : {
-        type : DataTypes.STRING,
+        type : DataTypes.INTEGER,
         allowNull: false,
     },
     durasi : {
