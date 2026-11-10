@@ -1,0 +1,97 @@
+"Aplikasi Parkir PK"
+
+Role: 4 role
+- Admin
+- Petugas
+- Owner
+- Pengguna
+
+Fitur:
+- Admin
+1. CRUD Pengguna
+2. CRUD Tarif
+3. CRUD Area Parkir
+4. CRUD Kendaraan
+5. CRUD Transaksi
+6. Read Log aktivitas
+7. Read Log Transaksi
+
+- Petugas
+1. Create Kendaraan
+2. Create, Update Transaksi(masuk-keluar)
+3. Cetak Karcis, Struk Transaksi
+
+- Owner
+1. Read Log Transaksi
+2. Cetak Rekap Transaksi
+
+database : "parkir_pk"
+Tabel:
+1. tb_pengguna
+- id_pengguna (PK, int) (frontend cth.: id001)
+- nama_lengkap
+- nama_pengguna
+- password 
+- role (enum: Admin, Petugas, Owner)
+- status_aktif
+
+2. tb_tarif
+- id_tarif (PK, varchar) (cth.: tp_mb, tp_mt, tp_ln)
+- jenis_kendaraan (enum: Mobil, Motor, Lainnya)
+- biaya_tarif
+
+3. tb_area
+- id_area (PK, int) (frontend cth.: ap001)
+- nama_area
+- kapasitas
+- terisi
+- status (enum: Penuh, Tersedia)
+
+4. tb_kendaraan
+- id_kendaraan (PK, int)
+- nomor_polisi
+- jenis_kendaraan (enum: Mobil, Motor, Lainnya)
+
+5. tb_transaksi
+- id_parkir (PK, int) (frontend cth.: trx001)
+- id_kendaraan (FK: tb_kendaraan)
+- id_area (FK: tb_area)
+- waktu_masuk 
+- waktu keluar 
+- id_tarif (FK: tb_tarif)
+- durasi
+- tarif_total
+- metode_pembayaran (enum: QRIS, Debit)
+- status (enum: Masuk, Selesai)
+- tanggal
+- id_petugas_masuk (FK: tb_pengguna)
+- id_petugas_keluar (FK: tb_pengguna)
+
+a. karcis masuk
+- id_parkir
+- nomor_polisi
+- waktu_masuk
+- nama_area
+- biaya_tarif
+- tanggal
+- nama_lengkap (petugas masuk)
+
+b. Struk keluar
+- id_parkir
+- nomor_polisi
+- waktu_masuk
+- waktu_keluar
+- nama_area
+- biaya_tarif
+- tarif_total
+- metode_pembayaran
+- tanggal
+- nama_lengkap (petugas masuk)
+- nama_lengkap (petugas keluar)
+
+6. tb_log_aktivitas
+- id_log
+- id_pengguna
+- aktivitas
+- waktu_aktivitas
+
