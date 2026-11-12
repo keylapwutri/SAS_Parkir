@@ -1,24 +1,51 @@
 GET http://localhost:5000/pengguna
 ###
+GET http://localhost:5000/pengguna/5
+
+###
 GET http://localhost:5000/tarif
+###
+GET http://localhost:5000/tarif/1
+
 ###
 GET http://localhost:5000/kendaraan
 ###
+GET http://localhost:5000/kendaraan/1
+
+###
 GET http://localhost:5000/area
 ###
+GET http://localhost:5000/area/1
+
+###
 GET http://localhost:5000/transaksi
+###
+GET http://localhost:5000/transaksi/1
 
 ###
 POST http://localhost:5000/pengguna
 Content-Type: application/json
 
 {
-    "nama_lengkap": "Keyla Azhari Permata Putri",
-    "nama_pengguna": "admin2",
+    "nama_lengkap": "dummy",
+    "nama_pengguna": "dumpetugas",
+    "password": "12345",
+    "role": "petugas",
+    "status_aktif": false
+}
+###
+PATCH  http://localhost:5000/pengguna/5
+Content-Type: application/json
+
+{
+    "nama_lengkap": "Fairuz Kayyasah",
+    "nama_pengguna": "admin1",
     "password": "admin123",
     "role": "admin",
     "status_aktif": false
 }
+###
+DELETE http://localhost:5000/pengguna/7
 
 ###
 POST http://localhost:5000/tarif
@@ -26,26 +53,57 @@ Content-Type: application/json
 
 {
     "jenis_kendaraan": "lainnya",
-    "biaya_tarif": 7000.00,
+    "biaya_tarif": 8000.00,
     "tarif_maksimal": 30000.00
 }
+###
+PATCH  http://localhost:5000/tarif/1
+Content-Type: application/json
+
+{
+    "jenis_kendaraan": "motor",
+    "biaya_tarif": 3000.00,
+    "tarif_maksimal": 15000.00
+}
+###
+DELETE http://localhost:5000/tarif/4
 
 ###
 POST http://localhost:5000/area
 Content-Type: application/json
 
 {
-    "nama_area": "A1",
+    "nama_area": "A2",
     "kapasitas": 10,
     "terisi": 0,
     "status": true
 }
+###
+PATCH  http://localhost:5000/area/1
+Content-Type: application/json
+
+{
+    "nama_area": "A1",
+    "kapasitas": 9,
+    "terisi": 1,
+    "status": true
+}
+###
+DELETE http://localhost:5000/area/2
 
 ###
 POST http://localhost:5000/kendaraan
 Content-Type: application/json
 
 {
-    "nomor_polisi": "B3818EUF",
+    "nomor_polisi": "B1415EEL",
+    "jenis_kendaraan": "motor"
+}
+###
+PATCH  http://localhost:5000/kendaraan/1
+Content-Type: application/json
+
+{
+    "nomor_polisi": "B3818EUV",
     "jenis_kendaraan": "motor"
 }

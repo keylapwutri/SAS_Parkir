@@ -28,6 +28,33 @@ export const get_semua_transaksi = async(req, res) =>{
     }
 }
 
+export const get_transaksi = async(req, res) =>{
+    try {
+        const response = await Transaksi.findOne({
+            where: {
+                id_transaksi: req.params.id
+            },
+            include: [
+                {
+                    model: Kendaraan,
+                    as: "kendaraan"
+                },
+                {
+                    model: Area,
+                    as: "area"
+                },
+                {
+                    model: Tarif,
+                    as: "tarif"
+                }
+            ]
+        });
+        res.status(200).json(response);
+    } catch (error) {
+        console.log(error.message);
+    }
+}
+
 /*const hasil = hitung_tarif(
     Transaksi.waktu_masuk,
     new Date(),

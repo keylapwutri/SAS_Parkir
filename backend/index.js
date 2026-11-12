@@ -7,6 +7,8 @@ import RouterKendaraan from "./routes/kendaraan_router.js"
 import RouterTransaksi from "./routes/transaksi_router.js"
 import RouterLog from "./routes/log_router.js"
 
+import "./models/associations.js"
+
 const app = express();
 app.use(cors());
 app.use(express.json());

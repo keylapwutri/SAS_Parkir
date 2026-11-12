@@ -5,7 +5,7 @@ import database from "../config/database.js";
 const {DataTypes} = Sequelize;
 
 const Transaksi = database.define('tb_transaksi', {
-    id_parkir : {
+    id_transaksi : {
         type : DataTypes.INTEGER,
         autoIncrement : true,
         primaryKey : true
