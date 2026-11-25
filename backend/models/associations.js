@@ -44,3 +44,23 @@ Transaksi.belongsTo(Kendaraan, {
     foreignKey: "id_kendaraan",
     as: "kendaraan"
 });
+
+Pengguna.hasMany(Transaksi, {
+    foreignKey: "id_petugas_masuk",
+    as: "transaksiMasuk"
+});
+
+Transaksi.belongsTo(Pengguna, {
+    foreignKey: "id_petugas_masuk",
+    as: "petugasMasuk"
+});
+
+Pengguna.hasMany(Transaksi, {
+    foreignKey: "id_petugas_keluar",
+    as: "transaksiKeluar"
+});
+
+Transaksi.belongsTo(Pengguna, {
+    foreignKey: "id_petugas_keluar",
+    as: "petugasKeluar"
+});

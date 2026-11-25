@@ -48,6 +48,18 @@ const Transaksi = database.define('tb_transaksi', {
         type : DataTypes.DATEONLY,
         allowNull : false,
         defaultValue : DataTypes.NOW
+    },
+    metode_pembayaran: {
+    type: DataTypes.ENUM("QRIS", "Debit"),
+    allowNull: true
+    },
+    id_petugas_masuk: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
+    id_petugas_keluar: {
+        type: DataTypes.INTEGER,
+        allowNull: true
     }
 }, {
     freezeTableName : true,

@@ -27,21 +27,21 @@ POST http://localhost:5000/pengguna
 Content-Type: application/json
 
 {
-    "nama_lengkap": "dummy",
-    "nama_pengguna": "dumpetugas",
+    "nama_lengkap": "Dea Anggi",
+    "nama_pengguna": "owner123",
     "password": "12345",
-    "role": "petugas",
+    "role": "owner",
     "status_aktif": false
 }
 ###
-PATCH  http://localhost:5000/pengguna/5
+PATCH  http://localhost:5000/pengguna/9
 Content-Type: application/json
 
 {
-    "nama_lengkap": "Fairuz Kayyasah",
-    "nama_pengguna": "admin1",
-    "password": "admin123",
-    "role": "admin",
+    "nama_lengkap": "Pemilik Parkir",
+    "nama_pengguna": "owner123",
+    "password": "12345",
+    "role": "owner",
     "status_aktif": false
 }
 ###
@@ -106,4 +106,35 @@ Content-Type: application/json
 {
     "nomor_polisi": "B3818EUV",
     "jenis_kendaraan": "motor"
+}
+
+###
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "nama_pengguna": "dumpetugas",
+  "password": "12345"
+}
+
+###
+POST http://localhost:5000/transaksi
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9wZW5nZ3VuYSI6OCwibmFtYV9sZW5na2FwIjoiZHVtbXkiLCJuYW1hX3BlbmdndW5hIjoiZHVtcGV0dWdhcyIsInJvbGUiOiJwZXR1Z2FzIiwiaWF0IjoxNzk1NjAxNTMzLCJleHAiOjE3OTU2ODc5MzN9.0piFd6Cr1WrHk2Eopfn55x_mRJOxtg8Ae5p6hEsHyrA
+
+{
+  "id_kendaraan": 2,
+  "id_area": 1,
+  "id_tarif": 1,
+  "status_transaksi": "masuk"
+}
+
+###
+PATCH http://localhost:5000/transaksi/1/keluar
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9wZW5nZ3VuYSI6OCwibmFtYV9sZW5na2FwIjoiZHVtbXkiLCJuYW1hX3BlbmdndW5hIjoiZHVtcGV0dWdhcyIsInJvbGUiOiJwZXR1Z2FzIiwiaWF0IjoxNzk1NjAxNTMzLCJleHAiOjE3OTU2ODc5MzN9.0piFd6Cr1WrHk2Eopfn55x_mRJOxtg8Ae5p6hEsHyrA
+
+{
+  "metode_pembayaran": "QRIS",
+  "status_transaksi": "masuk"
 }

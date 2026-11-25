@@ -6,6 +6,7 @@ import RouterArea from "./routes/area_router.js"
 import RouterKendaraan from "./routes/kendaraan_router.js"
 import RouterTransaksi from "./routes/transaksi_router.js"
 import RouterLog from "./routes/log_router.js"
+import RouterAuth from "./routes/auth_router.js"
 
 import "./models/associations.js"
 
@@ -18,5 +19,6 @@ app.use(RouterArea);
 app.use(RouterKendaraan);
 app.use(RouterTransaksi);
 app.use(RouterLog);
+app.use(RouterAuth);
 
 app.listen(5000, ()=> console.log('Server Aplikasi ParkirPK Berjalan.'));
